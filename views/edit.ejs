@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs") %>
+<h1>Edit your Blog here</h1>
+<%let title = locals.title%>
+<%let content = locals.content%>
+<%let index = locals.index%>
+<%=index%>
+<%=title%>
+<%=content%>
+<form action="/edited" method="POST">
+<div class="form-group">
+    <label for="editContent">Edit Your Blog Here</label>
+    <label for="editTtile">Want to change the heading?</label>
+    <textarea class="form-control" id="editTtile" name="editTtile" rows="2" required><%=title%></textarea>
+    <textarea class="form-control" id="editContent" name="editContent" rows="15" required><%=content%></textarea>
+    <input type="hidden" name="edited_index" value="<%=index %>">
+    <input type="submit" value="Submit">
+  </div>
+</form>
+<%- include("partials/footer.ejs") %>

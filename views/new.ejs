@@ -1,0 +1,12 @@
+<%- include("partials/header.ejs") %>
+<h1>Write Your Blog here</h1>
+<form action="/post" method="POST">
+<div class="form-group">
+    <label for="writeContent">Write Your Blog Here</label>
+    <label for="writeTtile">What's the title of your blog?</label>
+    <textarea class="form-control" id="writeTtile" name="writeTtile" rows="2" required></textarea>
+    <textarea class="form-control" id="writeContent" name="writeContent" rows="15" required></textarea>
+    <input type="submit" value="Submit">
+  </div>
+</form>
+<%- include("partials/footer.ejs") %>

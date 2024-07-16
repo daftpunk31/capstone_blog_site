@@ -1,0 +1,27 @@
+<%- include("partials/header.ejs") %>
+<a href="/new" class="btn btn-primary">New Blog</a>
+<% if((locals.titles)&&(locals.contents)){ %>
+  <%let titles = locals.titles%>
+  <%let contents = locals.contents%>
+<div class="album-collection">
+  <ul>
+    <% for(let i = 0; i < titles.length; i++) { %>
+        <li>
+            <h2><%= titles[i] %></h2>
+            <p><%= contents[i] %></p>
+            <form action="/remove" method="POST">
+                <input type="hidden" name="remove" value="<%= i %>">
+                <button type="submit">Remove</button>
+            </form>
+            <form action="/edit" method="POST">
+              <input type="hidden" name="edit" value="<%= i %>">
+              <button type="submit">Edit</button>
+          </form>
+        </li>
+    <% } %>
+</ul>
+<% }else{ %>
+  <p>Nothing to see here.</p>
+  <% } %>
+  </body>
+<%- include("partials/footer.ejs") %>

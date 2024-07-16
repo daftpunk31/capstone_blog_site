@@ -1,0 +1,63 @@
+import express from "express";
+import bodyParser from "body-parser";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+const app = express();
+const port = 3000;
+
+app.use(express.static("public"));
+app.set("view engine", "ejs");
+app.use(bodyParser.urlencoded({ extended: true }));
+
+const titles = [];
+const contents = [];
+
+app.get("/", (req, res) => {
+  res.render("index.ejs", { titles: titles, contents: contents });
+});
+
+app.get("/new", (req, res) => {
+  res.render("new.ejs");
+});
+
+app.post("/remove", (req, res) => {
+  var index = req.body["remove"];
+  if (index > -1) {
+    titles.splice(index, 1);
+    contents.splice(index, 1);
+  }
+  res.redirect("/");
+});
+
+app.post("/edit", (req, res) => {
+  var editable_title = titles[req.body["edit"]];
+  var editable_content = contents[req.body["edit"]];
+  var index = req.body["edit"];
+  res.render("edit.ejs",{title: editable_title, content: editable_content, index: index});
+});
+
+app.post("/edited",(req,res)=>{
+  titles[req.body["edited_index"]] = req.body["editContent"];
+  contents[[req.body["edited_index"]]] = req.body["editTtile"];
+  res.redirect("/");
+});
+
+
+
+app.post("/post",(req,res)=>{
+  const new_content = req.body["writeContent"];
+  const new_title = req.body["writeTtile"];
+
+  titles.push(new_title);
+  contents.push(new_content);
+  console.log(titles);
+  console.log(contents);
+  res.redirect("/");
+});
+
+
+app.listen(port, () => {
+  console.log(`Listening on ${port}`);
+});
