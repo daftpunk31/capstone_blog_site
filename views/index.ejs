@@ -1,27 +1,68 @@
 <%- include("partials/header.ejs") %>
-<a href="/new" class="btn btn-primary">New Blog</a>
+
+<section id="hero">
+
+  <div class="container pic_class p-sm-2 mb-4">
+    <img src="/img/coffee_mug_focus.jpg" alt="A picture of a coffee mug">
+    </div>
+
+
+<div class="info p-sm-2 mb-4 info_div justify-content-center">
+    <h1 class="display-1 text-center fst-italic">Write your heart out, it's you and your blogs.</h1>
+    <p class="my-3">Let Blog lets you express your thoughts freely. By "freely" it means truly for free. This site is not connected to a database and whatever you write here, will not be saved.</p>
+    <p class="my-3">Now write away!</p>
+    <!-- <p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Continue reading...</a></p> -->
+
+</div>
+</section>
+
+
+<div class="col-md-12 text-center">
+<a href="/new" class="btn btn-primary btn-lg">New Blog</a>
+</div>
+<section id="blogs">
+
 <% if((locals.titles)&&(locals.contents)){ %>
   <%let titles = locals.titles%>
   <%let contents = locals.contents%>
-<div class="album-collection">
-  <ul>
-    <% for(let i = 0; i < titles.length; i++) { %>
-        <li>
-            <h2><%= titles[i] %></h2>
-            <p><%= contents[i] %></p>
-            <form action="/remove" method="POST">
-                <input type="hidden" name="remove" value="<%= i %>">
-                <button type="submit">Remove</button>
-            </form>
-            <form action="/edit" method="POST">
-              <input type="hidden" name="edit" value="<%= i %>">
-              <button type="submit">Edit</button>
-          </form>
-        </li>
-    <% } %>
-</ul>
-<% }else{ %>
-  <p>Nothing to see here.</p>
-  <% } %>
+
+<div class="album py-3 mx-4 my-4">
+  <div class="container mx-1">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <% for(let i = 0; i < titles.length; i++) { %>
+      <div class="col">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <p class="card-text fs-3"><small class="text-body-secondary">Title: </small><%= titles[i] %></p>
+            <div class="d-flex justify-content-center align-items-center">
+              <div class="btn-group justify-center">
+                <form action="/remove" method="POST">
+                  <input type="hidden" name="remove" value="<%= i %>">
+                  <button type="submit" class="btn btn-sm btn-outline-secondary mx-1">Remove</button>
+                </form>
+
+                <form action="/view" method="POST">
+                  <input type="hidden" name="view" value="<%= i %>">
+                <button type="submit" class="btn btn-sm btn-outline-secondary mx-1">View</button>
+                </form>
+
+
+                <form action="/edit" method="POST">
+                  <input type="hidden" name="edit" value="<%= i %>">
+                <button type="submit" class="btn btn-sm btn-outline-secondary mx-1">Edit</button>
+                </form>
+
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</div>
+<% } %>
+</section>
   </body>
 <%- include("partials/footer.ejs") %>

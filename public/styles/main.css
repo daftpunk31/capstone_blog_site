@@ -1,0 +1,211 @@
+
+.navbar-nav{
+
+    flex-flow: column wrap;
+    justify-content: space-between;
+}
+
+.new_blog_link{
+    font-family: "Epilogue", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color: #4b3832;
+
+}
+
+.about_me_link{
+    font-family: "Epilogue", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color: #4b3832;
+}
+
+.home_link{
+    font-family: "Bevan", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #4b3832;
+}
+
+.brand{
+    font-family: "Bevan", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #4b3832;
+}
+
+body{
+    background-color: #fff4e6;
+}
+
+ul{
+  list-style-type: none;
+}
+
+/* .upper{
+  display: flex;
+  height: 100vh;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.upper .container{
+ max-height: 100%;
+ object-fit: contain;
+}
+
+
+
+.pic_class > img{
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+} */
+
+#hero h1{
+  font-family: "Spectral", serif;
+  font-weight: 700;
+  font-style: italic;
+  color: #4b3832;
+}
+
+#hero p{
+  text-align: center;
+  font-size: 1.5rem;
+  color: #854442;
+}
+
+
+/* .album-collection{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+} */
+
+#hero{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* #hero > .text_div{
+  align-self: center;
+} */
+
+#hero > .pic_class{
+  display: flex;
+  justify-content: center;
+}
+
+#hero > .pic_class > img{
+  flex:1;
+  max-width: 300px;
+  min-width: 300px;
+  align-self: center;
+}
+
+#blogs{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#blogs > .album-collection > ul{
+  display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px; /* Optional: Adds spacing between the columns */
+      list-style: none;
+      padding: 0;
+}
+
+#blogs > .album-collection > li{
+  background-color: #f0f0f0;
+  padding: 10px;
+  border: 1px solid #ccc; /* Optional: Adds a border to each item */
+}
+
+/* #blogs > .album-collection > li > .row > .row{
+display: flex;
+justify-content: center;
+align-items: center;
+} */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns by default */
+  gap: 20px;
+}
+
+.grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for large screens (below 992px) */
+  }
+}
+
+@media (max-width: 576px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* 1 column for small screens (below 576px) */
+  }
+}
+
+ul.list-unstyled {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.border.rounded.overflow-hidden.flex-md-row.mb-4.shadow-sm.h-md-250.position-relative.align-items-center.justify-content-center.text-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+.btn-primary {
+  margin: 15px;
+  background-color: #4b3832;
+  border-color: #f3dfc1; /* Custom background color */
+  color: #f3dfc1; /* Custom hover border color */
+  font-family: "Merriweather", serif;
+font-weight: 400;
+}
+
+.btn-primary:hover {
+  margin: 15px; 
+  background-color: #f3dfc1; /* Custom hover color */
+  border-color: #4b3832;
+  color: #3c2f2f; /* Custom hover border color */
+  font-family: "Merriweather", serif;
+font-weight: 400;
+}
+
+.album{
+  background-color: #fff4e6;
+  box-sizing: border-box;
+  border: 0.5px solid #3c2f2f;
+  border-radius: 10px;
+}
+
+.card{
+  background-color: antiquewhite;
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: justify;
+}
+
+.card-text{
+  text-align: center;
+  object-fit: contain;
+}

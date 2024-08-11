@@ -1,12 +1,16 @@
 <%- include("partials/header.ejs") %>
-<h1>Write Your Blog here</h1>
-<form action="/post" method="POST">
-<div class="form-group">
-    <label for="writeContent">Write Your Blog Here</label>
-    <label for="writeTtile">What's the title of your blog?</label>
-    <textarea class="form-control" id="writeTtile" name="writeTtile" rows="2" required></textarea>
-    <textarea class="form-control" id="writeContent" name="writeContent" rows="15" required></textarea>
-    <input type="submit" value="Submit">
+<section id="heading">
+<h1 class="display-3 text-center">Write Your Blog here</h1>
+</section>
+<section id="new-blog">
+<form class="mx-4" action="/post" method="POST">
+<div class="form-group text-center">
+  <p class="fs-1">The Title</p>
+  <textarea class="form-control" id="writeTitle" name="writeTitle" rows="2" required></textarea>
+  <p class="fs-1">The Body</p>
+    <textarea class="form-control" id="writeContent" name="writeContent" rows="10" required></textarea>
+    <input class="sub-btn btn btn-lg my-4" type="submit" value="Publish">
   </div>
 </form>
+</section>
 <%- include("partials/footer.ejs") %>

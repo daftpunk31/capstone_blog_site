@@ -1,0 +1,24 @@
+<%- include("partials/header.ejs") %>
+
+<%let title = locals.title%>
+<%let content = locals.content%>
+<%let index = locals.index%>
+
+
+  <section id="view-blog">
+    <div class="row justify-content-sm-center">
+  <div class="d-flex justify-content-center form-group solid text-center mx-4 my-4 col-sm-8">
+    <h2 class="display-2 title mt-4"><%=title%></h2>
+    <p class="fs-5 content my-4"><%=content%></p>
+    <input type="hidden" name="edited_index" value="<%=index %>">
+</div>
+</div>
+</section>
+<div class="col-md-12 text-center">
+    <form class=" mx-4 my-0" action="/" method="Get">
+        <input class="sub-btn btn btn-lg my-2" type="submit" value="Home">
+    </form>
+</div>
+
+
+<%- include("partials/footer.ejs") %>

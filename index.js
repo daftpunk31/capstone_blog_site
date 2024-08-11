@@ -15,11 +15,22 @@ const titles = [];
 const contents = [];
 
 app.get("/", (req, res) => {
-  res.render("index.ejs", { titles: titles, contents: contents });
+  res.render("index.ejs", { titles: titles, contents: contents});
 });
 
 app.get("/new", (req, res) => {
   res.render("new.ejs");
+});
+
+app.get("/about",(req,res)=>{
+  res.render("about.ejs")
+});
+
+app.post("/view", (req, res) => {
+  var view_title = titles[req.body["view"]];
+  var view_content = contents[req.body["view"]];
+  var index = req.body["view"];
+  res.render("view.ejs",{title: view_title, content: view_content, index: index});
 });
 
 app.post("/remove", (req, res) => {
@@ -39,8 +50,8 @@ app.post("/edit", (req, res) => {
 });
 
 app.post("/edited",(req,res)=>{
-  titles[req.body["edited_index"]] = req.body["editContent"];
-  contents[[req.body["edited_index"]]] = req.body["editTtile"];
+  titles[req.body["edited_index"]] = req.body["editTitle"];
+  contents[[req.body["edited_index"]]] = req.body["editContent"];
   res.redirect("/");
 });
 
@@ -48,12 +59,11 @@ app.post("/edited",(req,res)=>{
 
 app.post("/post",(req,res)=>{
   const new_content = req.body["writeContent"];
-  const new_title = req.body["writeTtile"];
+  const new_title = req.body["writeTitle"];
 
   titles.push(new_title);
   contents.push(new_content);
-  console.log(titles);
-  console.log(contents);
+
   res.redirect("/");
 });
 

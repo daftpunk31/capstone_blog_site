@@ -1,0 +1,45 @@
+#view-blog h2{
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #4b3832;
+  }
+
+  #view-blog p{
+    font-family: "Merriweather", serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: justify;
+    font-size: 2rem;
+    color: #4b3832;
+  }
+
+
+
+.sub-btn{
+    margin: 15px;
+    background-color: #f3dfc1; /* Custom hover color */
+    border-color: #4b3832;
+    color: #3c2f2f; /* Custom hover border color */
+  font-family: "Merriweather", serif;
+font-weight: 400;
+}
+
+.sub-btn:hover {
+    text-align: center;
+    margin: 15px; 
+    background-color: #f3dfc1; /* Custom hover color */
+    border-color: #4b3832;
+    color: #3c2f2f; /* Custom hover border color */
+
+    background-color: #4b3832;
+  border-color: #f3dfc1; /* Custom background color */
+  color: #f3dfc1; /* Custom hover border color */
+    font-family: "Merriweather", serif;
+  font-weight: 400;
+  }
+
+
+.solid{
+    border-style: solid;
+flex-direction: column;}
